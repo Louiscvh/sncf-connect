@@ -4,7 +4,7 @@ import RoutineMachine from "./RoutingMachine.tsx";
 import "leaflet/dist/leaflet.css";
 import { GeolocationPosition } from "../types/geolocationPosition.type.ts";
 
-export const Map = ({selectedAdress}: {selectedAdress: string}) => {
+export const Map = ({selectedAdress}: {selectedAdress: {x: number; y: number}}) => {
 
     const [locationStatus, setLocationStatus] = useState<string>('loading');
     const [position, setPosition] = useState<GeolocationPosition | null>(null);
