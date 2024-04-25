@@ -1,6 +1,7 @@
 import {Map} from "../components/Map.tsx";
 import {SearchInput} from "../components/SearchInput.tsx";
 import {useEffect, useState} from "react";
+import {RouteSteps} from "../components/RouteSteps.tsx";
 
 export const Landing = () => {
 

@@ -3,8 +3,12 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import RoutineMachine from "./RoutingMachine.tsx";
 import "leaflet/dist/leaflet.css";
 import { GeolocationPosition } from "../types/geolocationPosition.type.ts";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import "leaflet-routing-machine/dist/leaflet-routing-machine.css"; // Importez le fichier CSS de leaflet-routing-machine
 
 export const Map = ({selectedAdress}: {selectedAdress: string}) => {
+    //const [map, setMap] = useState(null);
 
     const [locationStatus, setLocationStatus] = useState<string>('loading');
     const [position, setPosition] = useState<GeolocationPosition | null>(null);
@@ -44,20 +48,22 @@ export const Map = ({selectedAdress}: {selectedAdress: string}) => {
             };
         }
         setLocationStatus('denied');
-    }, []);
+    }, [selectedAdress]);
+
 
     return (
          position ? <MapContainer
             doubleClickZoom={false}
             id="mapId"
-            zoom={30}
-            center={[33.5024, 36.2988]}
+            zoom={15}
+            center={[position?.lat, position?.lng]}
         >
+             <div className="h-screen w-screen bg-gray-500 z-[1000]"></div>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
             />
-                <RoutineMachine userPosition={position} destination={selectedAdress}/>
+                <RoutineMachine userPosition={position} destination={L.latLng(48.76475699202507, 2.270442906395297)}/>
             </MapContainer> : <div className="h-screen w-screen bg-gray-500 animate-pulse"></div>
     );
 };
