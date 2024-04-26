@@ -14,3 +14,97 @@ html, body, #root, .App, #mapId {
     height: 100vh;
     width: 100vw;
 }
+
+.leaflet-control-container .leaflet-left {
+    display: none;
+}
+
+.leaflet-control-container .leaflet-right {
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    max-height: 100px;
+}
+
+.leaflet-control-container {
+
+}
+
+.leaflet-control-container .leaflet-routing-alt {
+    max-height: 100px;
+    padding: 1rem;
+    margin-bottom: 0;
+}
+
+.leaflet-routing-alt > h2{
+    padding: 0.2rem;
+    background-color: white;
+    color: #000;
+    border-radius: 8px 8px 0px 0px;
+    padding: 8px 0 0 8px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.leaflet-routing-alt > h3{
+    padding: 0.2rem;
+    background-color: white;
+    color: #000;
+    border-radius: 0px 0px 8px 8px;
+    margin-bottom: 1rem;
+    padding: 0px 0px 8px 8px;
+}
+
+.leaflet-routing-icon {
+    background-color: white;
+    border-radius: 4px;
+}
+
+.leaflet-routing-collapse-btn {
+    display: none;
+}
+
+.leaflet-bar  {
+    border: none!important;
+    background-color: #0C131F;
+    color: white;
+    border-radius: 10px;
+}
+
+.leaflet-bottom.leaflet-right {
+    display: none;
+}
+
+.leaflet-routing-alt-minimized  {
+    display: none;
+}
+
+.leaflet-routing-alt tbody tr td:nth-child(2) {
+    padding-left: 8px
+}
+
+.leaflet-routing-alt tbody tr {
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.leaflet-routing-alt tbody tr:hover {
+    background-color: #172742;
+}
+
+.leaflet-tooltip-top:before {
+    border-top-color: #EF14C9;
+}
+
+.leaflet-tooltip-own {
+    position: absolute;
+    padding: 8px;
+    background-color: #EF14C9;
+    border: 0px solid #000;
+    color: white;
+    bottom: 1rem;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}

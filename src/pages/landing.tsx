@@ -1,6 +1,6 @@
-import { Map } from "../components/Map.tsx";
-import { SearchInput } from "../components/SearchInput.tsx";
-import { useEffect, useState } from "react";
+import {Map} from "../components/Map.tsx";
+import {SearchInput} from "../components/SearchInput.tsx";
+import {useEffect, useState} from "react";
 
 export type AddressType = {
     coords: {
@@ -28,8 +28,6 @@ export const Landing = () => {
                 },
                 label: feature.properties.label
             }));
-
-            console.log(addresses);
             setAddress(addresses);
         } catch (error) {
             console.error("Erreur lors de la récupération des adresses :", error);
@@ -38,12 +36,9 @@ export const Landing = () => {
 
     useEffect(() => {
         if (search) {
-            console.log('valeur', search);
             getAddresses(search);
         }
     }, [search]);
-
-    console.log("selectedAddress", selectedAddress);
 
     return (
         <main className="container">
@@ -54,10 +49,10 @@ export const Landing = () => {
                     search={search}
                     setSelectedAddress={setSelectedAddress}
                     onSearch={(search) => setSearch(search)}
-                    onClickProps={(address) => setSelectedAddress(address) }
+                    onClickProps={(adress) => setSelectedAddress(adress) }
                 />
                 <Map selectedAddress={selectedAddress} />
             </section>
         </main>
-    );
-};
+    )
+}
